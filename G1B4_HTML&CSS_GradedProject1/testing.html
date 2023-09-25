@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            background-color: #444;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .offers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid steelblue;
+            padding: 20px;
+            animation: slide 5s infinite alternate;
+        }
+
+        .products-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .product {
+            text-align: center;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s, border 0.2s, background-color 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            border: 2px solid rgb(0, 255, 76);
+            background-color: rgb(250, 234, 230);
+        }
+
+        .product img {
+            max-width: 100%;
+        }
+
+        .lab-test-form {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .lab-test-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .lab-test-form input[type="text"],
+        .lab-test-form input[type="number"],
+        .lab-test-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .lab-test-form select {
+            appearance: none;
+        }
+
+        .lab-test-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .right-image {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Pharmacy</header>
+    <nav>
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <a href="#">Our Medicines</a>
+            <div class="dropdown-content">
+                <a href="#">Fever</a>
+                <a href="#">Muscle Pains</a>
+                <a href="#">Cold and Cough</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Health Care</a>
+            <div class="dropdown-content">
+                <a href="#">Baby Care</a>
+                <a href="#">Skin Care</a>
+                <a href="#">Home Care</a>
+                <a href="#">Personal Care</a>
+                <a href="#">Pet Care</a>
+            </div>
+        </div>
+        <a href="#lab-test-form">Lab Test</a>
+    </nav>
+    
+    <div class="offers">
+        <img src="C:\Users\USER\OneDrive\Desktop\VSC html\G1B4_HTML&CSS_GradedProject1\ani3.jpg" alt="offers">
+    </div>
+
+    <div class="products-section">
+        <div class="product">
+            <img src="C:\Users\USER\OneDrive\Desktop\VSC html\G1B4_HTML&CSS_GradedProject1\ani2.png" alt="Covid Care">
+            <h2>Covid Care</h2>
+            <p>Price: Rs.1659/-</p>
+            <p>Price after Offer: Rs.579/-</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="C:\Users\USER\OneDrive\Desktop\VSC html\G1B4_HTML&CSS_GradedProject1\ani5.jpg" alt="Diabetes Care">
+            <h2>Diabetes Care</h2>
+            <p>Price: Rs.4499/-</p>
+            <p>Price after Offer: Rs.1574/-</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="lab-test-form" id="lab-test-form">
+        <h2>Lab Test Booking</h2>
+        <form action="#" method="post">
+            <label for="full-name"><small>Full Name:</small></label>
+            <input type="text" id="full-name" name="full-name" required>
+            
+            <label for="patient-id"><small>Patient ID (if exists):</small></label>
+            <input type="text" id="patient-id" name="patient-id">
+            
+            <label for="contact-number"><small>Contact Number:</small></label>
+            <input type="tel" id="contact-number" name="contact-number" required>
+            
+            <label for="email"><small>Email ID:</small></label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="address"><small>Address:</small></label>
+            <input type="text" id="house-number" name="house-number" placeholder="House Number" required>
+            <input type="text" id="street" name="street" placeholder="Street" required>
+            <input type="text" id="area" name="area" placeholder="Area" required>
+            <select id="district" name="district">
+                <option value="choose"><small>Choose</small></option>
+                <option value="district1"><small>District 1</small></option>
+                <option value="district2"><small>District 2</small></option>
+                <!-- Add/Customize Districts -->
+            </select>
+            
+            <label for="test-type">Choose Test Type:</label>
+            <div>
+                <input type="checkbox" id="cbc" name="test-type[]" value="CBC">
+                <label for="cbc">CBC</label>
+            </div>
+            <div>
+                <input type="checkbox" id="complete-urine" name="test-type[]" value="Complete Urine">
+                <label for="complete-urine">Complete Urine</label>
+            </div>
+            <!-- Add more test types here -->
+            <p id="test-type-error" style="color: red; display: none;">Check at least one box without fail</p>
+            
+            <label for="hard-copy">Do you want a hard copy of the report?</label>
+            <div>
+                <input type="radio" id="yes" name="hard-copy" value="Yes">
+                <label for="yes">Yes</label>
+            </div>
+            <div>
+                <input type="radio" id="no" name="hard-copy" value="No">
+                <label for="no">No</label>
+            </div>
+            
+            <label for="date">Select Your Comfortable Date and Time:</label>
+            <input type="date" id="date" name="date" required>
+            <input type="time" id="time" name="time" required>
+            
+            <div>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <img src="C:\Users\USER\OneDrive\Desktop\VSC html\G1B4_HTML&CSS_GradedProject1\copyright.jpg"  width="50" 
+    height="50" alt="Right Image" class="right-image">
+    
+    <footer>@copyright. Only for demonstration purposes</footer>
+</body>
+</html>
